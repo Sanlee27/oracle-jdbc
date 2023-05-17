@@ -86,12 +86,12 @@
 		%>
 				<tr>
 					<td><%=(Integer)(l.get("번호"))%></td>
-					<td><%=(String)(l.get("이름"))%>이름</td>
-					<td><%=(String)(l.get("이름첫글자"))%>이름첫글자</td>
-					<td><%=(Integer)(l.get("연봉"))%>연봉</td>
-					<td><%=(Double)(l.get("급여"))%>급여</td>
-					<td><%=(String)(l.get("입사날짜"))%>입사날짜</td>
-					<td><%=(Integer)(l.get("입사년도"))%>입사년도</td>
+					<td><%=(String)(l.get("이름"))%></td>
+					<td><%=(String)(l.get("이름첫글자"))%></td>
+					<td><%=(Integer)(l.get("연봉"))%></td>
+					<td><%=(Double)(l.get("급여"))%></td>
+					<td><%=(String)(l.get("입사날짜"))%></td>
+					<td><%=(Integer)(l.get("입사년도"))%></td>
 				</tr>
 		<%
 			}
