@@ -71,7 +71,13 @@
 	분석함수 : 원본 결과셋의 변경없이,계산용 임시집합(셋)을 만들어 계산(집계,통계)에 사용 후 
 			그 결과를 select절에 값으로 추가
 	(시스템 내부적으로는 스칼라 서브쿼리를 사용 > 분석함수를 제공하지 않는 RDBS에서는 스칼라 서브쿼리를 사용)
-
+	
+	분석함수의 종류
+	1. 분석용 집계함수
+	2. 랭크함수
+	3. 비율함수
+	
+	랭크함수
 	select employee_id, last_name, salary, rank(partition by ~~ >> ~에 대한 순위) over(order by salary desc) 전체사원수 from employees;
 
 	select employee_id, last_name, salary, rank() over(order by salary desc) 급여순위

@@ -72,7 +72,12 @@
 			그 결과를 select절에 값으로 추가
 	(시스템 내부적으로는 스칼라 서브쿼리를 사용 > 분석함수를 제공하지 않는 RDBS에서는 스칼라 서브쿼리를 사용)
 
-	분석함수의 종류(분석용 집계함수, 랭크함수, 비율)
+	분석함수의 종류
+		1. 분석용 집계함수 
+		2. 랭크함수
+		3. 비율함수
+		
+	분석용 집계 함수
 	select employee_id, last_name, salary, 
 	    round(avg(salary) over()) 전체급여평균,
 	    sum(salary) over() 전체급여합계,
@@ -138,13 +143,16 @@
 		 %>
 	</table>
 	<!-- 페이지 -->
-	<%
+	<%	
+		// 첫페이지가 아닐 경우 이전 버튼 표시 == 첫 페이지에선 표시 x
 		if(minPage > 1){
 	%>
-			<a href="<%=request.getContextPath()%>/windowsFunction.jsp?currentPage=<%=minPage-rowPerPage%>">이전</a>&nbsp;
+			<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=minPage-rowPerPage%>">이전</a>&nbsp;
 	<%
 		}
-	
+		
+		// 첫페이지부터 마지막 페이지까지 버튼 표시
+		// 현재 페이지 일 경우 숫자만 표시 / 나머지 페이지는 링크로 표시
 		for(int i = minPage; i<=maxPage; i++){
 			if(i == currentPage){
 	%>
@@ -152,14 +160,14 @@
 	<%	
 			} else {
 	%>
-				<a href="<%=request.getContextPath()%>/windowsFunction.jsp?currentPage=<%=i%>"><%=i%></a>&nbsp;
+				<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=i%>"><%=i%></a>&nbsp;
 	<%			
 			}
 		}
-		
+		// 각 페이지 표시버튼이 마지막이 아닌 경우 다음 버튼 표시 == 마지막 페이지에선 표시x
 		if(maxPage != lastPage){
 	%>
-			<a href="<%=request.getContextPath()%>/windowsFunction.jsp?currentPage=<%=minPage+rowPerPage%>">다음</a>&nbsp;
+			<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=minPage+rowPerPage%>">다음</a>&nbsp;
 	<%
 		}
 	%>	
