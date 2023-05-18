@@ -131,13 +131,16 @@
 		 %>
 	</table>
 	<!-- 페이지 -->
-	<%
+	<%	
+		// 첫페이지가 아닐 경우 이전 버튼 표시 == 첫 페이지에선 표시 x
 		if(minPage > 1){
 	%>
 			<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=minPage-rowPerPage%>">이전</a>&nbsp;
 	<%
 		}
-	
+		
+		// 첫페이지부터 마지막 페이지까지 버튼 표시
+		// 현재 페이지 일 경우 숫자만 표시 / 나머지 페이지는 링크로 표시
 		for(int i = minPage; i<=maxPage; i++){
 			if(i == currentPage){
 	%>
@@ -149,7 +152,7 @@
 	<%			
 			}
 		}
-		
+		// 각 페이지 표시버튼이 마지막이 아닌 경우 다음 버튼 표시 == 마지막 페이지에선 표시x
 		if(maxPage != lastPage){
 	%>
 			<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=minPage+rowPerPage%>">다음</a>&nbsp;
