@@ -147,7 +147,7 @@
 		// 첫페이지가 아닐 경우 이전 버튼 표시 == 첫 페이지에선 표시 x
 		if(minPage > 1){
 	%>
-			<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=minPage-rowPerPage%>">이전</a>&nbsp;
+			<a href="<%=request.getContextPath()%>/windowsFunction.jsp?currentPage=<%=minPage-rowPerPage%>">이전</a>&nbsp;
 	<%
 		}
 		
@@ -160,14 +160,14 @@
 	<%	
 			} else {
 	%>
-				<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=i%>"><%=i%></a>&nbsp;
+				<a href="<%=request.getContextPath()%>/windowsFunction.jsp?currentPage=<%=i%>"><%=i%></a>&nbsp;
 	<%			
 			}
 		}
 		// 각 페이지 표시버튼이 마지막이 아닌 경우 다음 버튼 표시 == 마지막 페이지에선 표시x
 		if(maxPage != lastPage){
 	%>
-			<a href="<%=request.getContextPath()%>/rankFunctionEmpList.jsp?currentPage=<%=minPage+rowPerPage%>">다음</a>&nbsp;
+			<a href="<%=request.getContextPath()%>/windowsFunction.jsp?currentPage=<%=minPage+rowPerPage%>">다음</a>&nbsp;
 	<%
 		}
 	%>	
