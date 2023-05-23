@@ -27,7 +27,7 @@
 	
 	stmt = conn.prepareStatement(sql);
 	
-	System.out.println(stmt + " : rank_ntil_list stmt");
+	System.out.println(stmt + " : exists_not_exists_list stmt");
 	
 	rs = stmt.executeQuery();
 	
@@ -46,7 +46,7 @@
 	
 	nStmt = conn.prepareStatement(nSql);
 	
-	System.out.println(nStmt + " : rank_ntil_list nStmt");
+	System.out.println(nStmt + " : exists_not_exists_list nStmt");
 	
 	nRs = nStmt.executeQuery();
 	
